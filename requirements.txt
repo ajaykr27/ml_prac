@@ -1,0 +1,15 @@
+numpy
+scipy
+matplotlib
+sqlalchemy
+pandas
+fastapi
+uvicorn
+sklearn
+psycopg2
+mysql-connector-python
+scikit-learn
+gunicorn==19.9.0
+urllib3
+uvloop
+httptools
