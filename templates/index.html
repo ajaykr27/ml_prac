@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+<style>
+
+    body
+    {
+        background-color: powderblue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        font-family: cursive;
+      }
+
+     input,
+        textarea {
+        width: 100%;
+        padding: 5px;
+        outline: none;
+      }
+
+      label {
+        line-height: 1.9rem;
+      }
+
+      input[type="submit"] {
+       transform: translate(2.2%);
+       padding: 3px;
+       margin-top: 0.6rem;
+       font-family: cursive;
+       font-weight: bold;
+      }
+
+     fieldset {
+       padding: 20px 40px;
+     }
+
+</style>
+</head>
+
+<body>
+
+
+<form action="/predict/" method="POST" enctype="application/x-www-form-urlencoded">
+
+
+    <center>
+        <h1 style="color:green;">BANK NOTE PREDICTION</h1>
+
+        <h3>Predict your Note</h3>
+    </center>
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <label for="">Variance:</label>
+            <input type="number" class="form-control" name="variance" step="any" value="0.0" />
+        </div>
+
+        <div class="col-md-6">
+            <label for="">Skewness:</label>
+            <input type="number" class="form-control" name="skewness" step="any" value="0.0" />
+        </div>
+
+        <div class="col-md-6">
+            <label for="">Curtosis:</label>
+            <input type="number" class="form-control" name="curtosis" step="any" value="0.0" />
+        </div>
+
+        <div class="col-md-6">
+            <label for="">Entropy:</label>
+            <input type="number" class="form-control" name="entropy" step="any" value="0.0" />
+        </div>
+
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-info mt-4" >Predict</button><br/>
+        </div>
+
+    </div>
+
+</form>
+</body>
+</html>

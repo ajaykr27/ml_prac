@@ -1,0 +1,137 @@
+<html>
+<head>
+    <title>Prediction Details</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <script>
+        div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+input[type=float], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+table, th, td {
+  border:1px solid black;
+}
+{
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto Slab';
+  font-size: 0.75 rem;
+  font-weight: 250;
+}
+
+div#predicted_values {
+  width: 800px;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-evenly;
+  border: 2px solid black;
+  padding: 10px;
+}
+
+div.input-box {
+  display: flex;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+div.input-box label {
+  display: inline-block;
+  margin: 10px 10px 10px 0;
+  width: 20%;
+}
+
+div.input-box input {
+  font-size: 1.5rem;
+  border: 1px solid #ccc;
+  padding: 4px 8px;
+  flex: 1;
+}
+
+input.button {
+  font-size: 1.5rem;
+  background: black;
+  color: white;
+  border: 1px solid black;
+  margin: 10px;
+  padding: 4px 40px;
+}
+    </script>
+    
+</head>
+<body>
+    <div id="predicted_value">
+        <form method="post" name="prediction" >
+            <fieldset>
+
+                <div class="input-box">
+                    <label for="Variance">Enter Variance(float):</label><br>
+    <input type="float" name="Variance" value="0.0"/><br><br>
+                </div>
+                <div class="input-box">
+                     <label for="skewness">Enter skewness(float):</label><br>
+        <input type="float" name="skewness" value="0.0"/><br><br>
+                </div>
+                <div class="input-box">
+                    <label for="curtosis">Enter curtosis(float):</label><br>
+		<input type="float" name="curtosis" value="0.0"/><br><br>
+                </div>
+                <div class="input-box">
+                     <label for="entropy">Enter entropy(float):</label><br>
+         <input type="float" name="entropy" value="0.0"/><br><br>
+                </div>
+
+    <input type="submit" value="Predict" class="button1">
+            </fieldset>
+</form>
+
+    </div>
+<table style="width:100%" class="predicted_table">
+  <tr>
+    <th>Variance</th>
+    <th>skewness</th>
+    <th>curtosis</th>
+      <th>entropy</th>
+      <th>prediction</th>
+
+
+  </tr>
+  <tr>
+    <td>{{ Variance }}</td>
+    <td>{{skewness}}</td>
+    <td>{{curtosis}}</td>
+      <td>{{entropy}}</td>
+      <td>{{prediction}}</td>
+
+  </tr>
+
+</table>
+<a </a>
+</body>
+</html>
