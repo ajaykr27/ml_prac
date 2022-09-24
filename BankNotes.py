@@ -8,10 +8,8 @@ from pydantic import BaseModel,Field
 # 2. Class which describes Bank Notes measurements
 
 class BankNote(BaseModel):
-    Id= int
-    variance= float
-    skewness= float
-    curtosis= float
-    entropy= float
-    note_class= int
-    prediction= str
+    variance: float
+    skewness: float
+    curtosis: float
+    entropy: float
+

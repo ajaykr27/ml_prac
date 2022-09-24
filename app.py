@@ -44,6 +44,10 @@ Notes=[]
 
 # 3. Index route, opens automatically on http://127.0.0.1:8000
 
+@app.get('/predict_values')
+def index(db: Session = Depends(get_db)):
+    return db.query(Models.Notes).all()
+
 @app.get('/',response_class=HTMLResponse)
 async def read_predicts(request: Request, db: Session = Depends(get_db)):
     records = db.query(Models.Notes).all()
@@ -69,7 +73,7 @@ def read_movie(request: Request, id: BankNote.Id, db: Session = Depends(get_db))
     return templates.TemplateResponse("overview.html", {"request": request, "predict": item})"""
 
 @app.post("/predict/",response_class=HTMLResponse)
-async def create_movie(request: Request,db: Session = Depends(get_db), variance: BankNote.variance = Form(...), skewness: BankNote.skewness = Form(...), curtosis: BankNote.curtosis = Form(...), entropy: BankNote.entropy = Form(...)):
+async def predict_note(request: Request,db: Session = Depends(get_db), variance: float = Form(...), skewness: float = Form(...), curtosis: float = Form(...), entropy: float = Form(...)):
 
     note_class = classifier.predict([[variance, skewness, curtosis, entropy]])
     if (note_class[0] > 0.5):
@@ -89,45 +93,8 @@ async def create_movie(request: Request,db: Session = Depends(get_db), variance:
                                                     ,"skewness":skewness,"curtosis":curtosis,"entropy":entropy})
 
 
-# 4. Route with a single parameter, returns the parameter within a message
-#    Located at: http://127.0.0.1:8000/AnyNameHere
-""""@app.post('/')
-def get_note(note: BankNote, db: Session = Depends(get_db)):
 
-    note_model= Models.Notes()
-    note_model.variance= note.variance
-    note_model.skewness= note.skewness
-    note_model.curtosis= note.curtosis
-    note_model.entropy= note.entropy
-
-    db.add(note_model)
-    db.commit()
-
-    return note"""
-
-
-""""@app.put('/{note_id}')
-def update_note(note_id:int, note: BankNote, db: Session = Depends(get_db)):
-
-    note_model=db.query(Models.Notes).filter(Models.Notes.Id==note_id).first()
-
-    if note_model is None:
-        raise HTTPException(
-            status_code=404,
-            detail=f"ID {note_id} : Does Not Exist"
-        )
-
-    note_model.variance = note.variance
-    note_model.skewness = note.skewness
-    note_model.curtosis = note.curtosis
-    note_model.entropy = note.entropy
-
-    db.add(note_model)
-    db.commit()
-
-    return note"""
-
-'''@app.delete('/{note_id}')
+"""@app.delete('/{note_id}')
 def delete_note(note_id:int, note: BankNote, db: Session = Depends(get_db)):
 
     note_model=db.query(Models.Notes).filter(Models.Notes.Id==note_id).first()
@@ -139,12 +106,12 @@ def delete_note(note_id:int, note: BankNote, db: Session = Depends(get_db)):
         )
 
     db.query(Models.Notes).filter(Models.Notes.Id == note_id).delete()
-    db.commit()
+    db.commit()"""
 
 
 # 3. Expose the prediction functionality, make a prediction from the passed
 #    JSON data and return the predicted Bank Note with the confidence
-@app.post('/predict')
+@app.post('/prediction')
 def predict_banknote(note: BankNote, db: Session = Depends(get_db)):
 
     note_model = Models.Notes()
@@ -182,7 +149,7 @@ def predict_banknote(note: BankNote, db: Session = Depends(get_db)):
     return {
         'prediction': prediction
     }
-'''
+
 
 
 

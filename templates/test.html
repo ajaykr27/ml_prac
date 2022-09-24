@@ -1,9 +1,96 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Welcome To Note Predictions</title>
+    <title>Note Prediction</title>
+<style>
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+input[type=float], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+table, th, td {
+  border:1px solid black;
+}
+{
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto Slab';
+  font-size: 0.75 rem;
+  font-weight: 250;
+}
+
+div#predicted_values {
+  width: 800px;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-evenly;
+  border: 2px solid black;
+  padding: 10px;
+}
+
+div.input-box {
+  display: flex;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+div.input-box label {
+  display: inline-block;
+  margin: 10px 10px 10px 0;
+  width: 20%;
+}
+
+div.input-box input {
+  font-size: 1.5rem;
+  border: 1px solid #ccc;
+  padding: 4px 8px;
+  flex: 1;
+}
+
+
+
+input.button {
+  font-size: 1.5rem;
+  background: black;
+  color: white;
+  border: 1px solid black;
+  margin: 10px;
+  padding: 4px 40px;
+}</style>
 </head>
+
 <body>
-<h1>Note Predictions</h1>
+<img src="{{ url_for('static', path='./css/money.jpg') }}" alt="" >
+
+<p>Variance&nbsp;:&nbsp;{{variance}}<br/>Skewness&nbsp;:&nbsp;{{skewness}}<br/>Curtosis&nbsp;:&nbsp;{{curtosis}}<br/>Entropy&nbsp;:&nbsp;{{entropy}}<br/>Prediction&nbsp;:&nbsp;{{prediction}}</p>
+
 </body>
 </html>
