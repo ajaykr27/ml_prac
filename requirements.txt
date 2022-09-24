@@ -8,7 +8,7 @@ uvicorn
 sklearn
 psycopg2
 jinja2
-mysql-connector-python
+mysql-connector-python==8.0.29
 python-multipart
 scikit-learn
 gunicorn==19.9.0
