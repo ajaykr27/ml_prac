@@ -7,7 +7,9 @@ fastapi
 uvicorn
 sklearn
 psycopg2
+jinja2
 mysql-connector-python
+python-multipart
 scikit-learn
 gunicorn==19.9.0
 urllib3

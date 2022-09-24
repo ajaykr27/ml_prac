@@ -1,8 +1,55 @@
 
 <!DOCTYPE html>
 <html>
+<head>Entered Value with prediction:
+<style>
+body{
+        background-color: green;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        font-family: cursive;
+      }
+
+     input,
+        textarea {
+        width: 100%;
+        padding: 5px;
+        outline: none;
+      }
+
+      img {
+          pointer-events: none;
+          position:"absolute"
+          filter: blur(3px);
+          width: 120%;
+          height: 200%;
+          z-index: -1;
+       }
+
+      label {
+        line-height: 1.9rem;
+      }
+
+       input[type="submit"] {
+       transform: translate(2.2%);
+       padding: 3px;
+       margin-top: 0.6rem;
+       font-family: cursive;
+       font-weight: bold;
+      }
+
+     fieldset {
+       padding: 20px 40px;
+     }
+
+</style>
+</head>
+
 <body>
-<h1>{{prediction}}</h1>
+
+<p>Variance&nbsp;:&nbsp;{{variance}}<br/>Skewness&nbsp;:&nbsp;{{skewness}}<br/>Curtosis&nbsp;:&nbsp;{{curtosis}}<br/>Entropy&nbsp;:&nbsp;{{entropy}}<br/>Prediction&nbsp;:&nbsp;{{prediction}}</p>
+
 </body>
 </html>
  

@@ -73,7 +73,7 @@ async def create_movie(request: Request,db: Session = Depends(get_db), variance:
 
     note_class = classifier.predict([[variance, skewness, curtosis, entropy]])
     if (note_class[0] > 0.5):
-        prediction = "Fake note"
+        prediction = "Its a Fake note"
         note_class = 1
     else:
         prediction = "Its a Bank note"
@@ -85,7 +85,8 @@ async def create_movie(request: Request,db: Session = Depends(get_db), variance:
     db.commit()
     #response = RedirectResponse('/', status_code=303)
     #return response
-    return templates.TemplateResponse("index.html", {"request": request, "prediction":prediction})
+    return templates.TemplateResponse("base.html", {"request": request, "prediction":prediction,"variance":variance
+                                                    ,"skewness":skewness,"curtosis":curtosis,"entropy":entropy})
 
 
 # 4. Route with a single parameter, returns the parameter within a message
