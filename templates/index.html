@@ -24,9 +24,9 @@
       img {
           pointer-events: none;
           position: absolute;
-          filter: blur(3px);
+          filter: blur(4px);
           width: 100%;
-          height: 150%;
+          height: 110%;
           z-index: -1;
        }
 
@@ -50,7 +50,7 @@
 </head>
 
 <body>
-<img src="{{ url_for('static', path='./css/money.jpg') }}" alt="">
+<img src="{{ url_for('static', path='./css/money1.jpg') }}" alt="">
 <form action="/predict/" method="POST" enctype="application/x-www-form-urlencoded">
 
 
