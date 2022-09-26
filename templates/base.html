@@ -13,8 +13,8 @@
 }
 .Note-prediction {
   position: absolute;
-  top: 20%;
-  left: 32%;
+  top: 25%;
+  left: 50%;
   transform: translate(-50%, -50%);
   font-size: 30px;
 }
@@ -38,7 +38,7 @@ h3 {
 
 <body>
 <div class="container">
-    <img src="{{url_for('static', path='./css/money.jpg')}}" alt="yes">
+    <img src="{{url_for('static', path='./css/money.jpg')}}" alt="yes" style="max-width:100%;height:auto;">
     <div class="Note-prediction">
         <h3/><b>Entered Values with prediction:</b> </h3>
         <p><b>Variance&nbsp;:&nbsp;{{variance}}</b><br/><b>Skewness&nbsp;:&nbsp;{{skewness}}</b>

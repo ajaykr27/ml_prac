@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Note Prediction</title>
 <style>
 
@@ -50,7 +51,7 @@
 </head>
 
 <body>
-<img src="{{ url_for('static', path='./css/money1.jpg') }}" alt="">
+<img src="{{ url_for('static', path='./css/money1.jpg') }}" alt="" style="max-width:100%;height:auto;">
 <form action="/predict/" method="POST" enctype="application/x-www-form-urlencoded">
 
 
