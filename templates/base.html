@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <a href="/" style="color:black background-color:powderblue"><b>PREDICT AGAIN</b></a>
     <meta name="viewport" content="width=device-width, initial-scale=1">
  <title>Note Prediction</title>
 <style>
@@ -18,6 +19,8 @@
   transform: translate(-50%, -50%);
   font-size: 30px;
 }
+
+
 
 p {
     font-family: "Lucida Console", "Courier New", monospace;
@@ -38,7 +41,7 @@ h3 {
 
 <body>
 <div class="container">
-    <img src="{{url_for('static', path='./css/money.jpg')}}" alt="yes" style="max-width:100%;height:auto;">
+    <img src="{{url_for('static', path='./css/money.jpg')}}" alt="yes" style="width:100%;height:auto;">
     <div class="Note-prediction">
         <h3/><b>Entered Values with prediction:</b> </h3>
         <p><b>Variance&nbsp;:&nbsp;{{variance}}</b><br/><b>Skewness&nbsp;:&nbsp;{{skewness}}</b>
