@@ -13,8 +13,8 @@
   color: black;
 }
 .Note-prediction {
-  position: absolute;
-  top: 25%;
+  position: fixed;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 30px;
@@ -28,20 +28,20 @@ p {
     line-height: 28px;
     text-align: justify;
     display: inline;
-    color: White;
+    color: Black;
 }
 
 h3 {
     font-family:Cursive;
     font-size: 30px;
-    color: White;
+    color: Black;
 }
 </style>
 </head>
 
 <body>
 <div class="container">
-    <img src="{{url_for('static', path='./css/money.jpg')}}" alt="yes" style="width:100%;height:auto;">
+    <img src="{{url_for('static', path='./css/money2.jpg')}}" alt="yes" style="width:100%;filter: blur(2px);">
     <div class="Note-prediction">
         <h3/><b>Entered Values with prediction:</b> </h3>
         <p><b>Variance&nbsp;:&nbsp;{{variance}}</b><br/><b>Skewness&nbsp;:&nbsp;{{skewness}}</b>
