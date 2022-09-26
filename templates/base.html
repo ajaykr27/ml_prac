@@ -3,7 +3,6 @@
 <html>
 <head>
     <meta http-equiv="Refresh" content="30; url='/'" />
-    <a href="/" style="color:black background-color:powderblue"><b>PREDICT AGAIN</b></a>
     <meta name="viewport" content="width=device-width, initial-scale=1">
  <title>Note Prediction</title>
 <style>
@@ -32,6 +31,13 @@ p {
     color: Black;
 }
 
+.topleft {
+  position: absolute;
+  top: -105px;
+  left: -380px;
+  font-size: 19px;
+}
+
 h3 {
     font-family:Cursive;
     font-size: 30px;
@@ -41,9 +47,13 @@ h3 {
 </head>
 
 <body>
+<img src="{{url_for('static', path='./css/money2.jpg')}}" alt="yes" style="width:100%;height: 110%;filter: blur(3px);position: absolute;">
 <div class="container">
-    <img src="{{url_for('static', path='./css/money2.jpg')}}" alt="yes" style="width:100%;filter: blur(3px);">
+
     <div class="Note-prediction">
+        <div class="topleft">
+        <h4><a href="/" style="color:darkblue"><b>PREDICT AGAIN</b></a></h4>
+        </div>
         <h3/><b>Entered Values with prediction:</b> </h3>
         <p><b>Variance&nbsp;:&nbsp;{{variance}}</b><br/><b>Skewness&nbsp;:&nbsp;{{skewness}}</b>
             <br/><b>Curtosis&nbsp;:&nbsp;{{curtosis}}</b><br/><b>Entropy&nbsp;:&nbsp;{{entropy}}</b>

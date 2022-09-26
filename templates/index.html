@@ -19,6 +19,13 @@
         text-align: center;
      }
 
+     .Note-prediction {
+          position: fixed;
+          top: 50px;
+          left: 370px;
+          font-size: 18px;
+    }
+
      input,
         textarea {
         width: 90%;
@@ -56,6 +63,7 @@
 
 <body>
 <img src="{{ url_for('static', path='./css/money3.jpg') }}" alt="" style="width:100;">
+<div class="Note-prediction">
 <form action="/predict/" method="POST" enctype="application/x-www-form-urlencoded">
 
 
@@ -100,7 +108,7 @@
             <button type="submit" class="btn btn-info mt-4" id="btn1">Predict</button><br/>
                 </center>
         </div>
-
+    </div>
     </div>
 
 </form>
