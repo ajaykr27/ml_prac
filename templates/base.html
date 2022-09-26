@@ -1,61 +1,53 @@
 
 <!DOCTYPE html>
 <html>
-<head><b>Entered Value with prediction:</b>
-    <title>Note Prediction</title>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Note Prediction</title>
 <style>
-body{
-        background-color: green;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        font-family: cursive;
-      }
 
-     input,
-        textarea {
-        width: 100%;
-        padding: 5px;
-        outline: none;
-      }
+.container {
+  position: absolute;
+  text-align: center;
+  color: black;
+}
+.Note-prediction {
+  position: absolute;
+  top: 20%;
+  left: 32%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+}
 
-      img {
-          pointer-events: none;
-          position:absolute
-          filter: blur(3px);
-          width: 100%;
-          height: 100%;
-          z-index: -1;
-       }
+p {
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 16px;
+    line-height: 28px;
+    text-align: justify;
+    display: inline;
+    color: White;
+}
 
-      label {
-        line-height: 1.9rem;
-      }
-
-       input[type="submit"] {
-       transform: translate(2.2%);
-       padding: 3px;
-       margin-top: 0.6rem;
-       font-family: cursive;
-       font-weight: bold;
-      }
-
-     fieldset {
-       padding: 20px 40px;
-     }
-
+h3 {
+    font-family:Cursive;
+    font-size: 30px;
+    color: White;
+}
 </style>
 </head>
 
 <body>
-
-
-<p><b>Variance&nbsp;:&nbsp;{{variance}}</b><br/><b>Skewness&nbsp;:&nbsp;{{skewness}}</b>
-    <br/><b>Curtosis&nbsp;:&nbsp;{{curtosis}}<b><br/><b>Entropy&nbsp;:&nbsp;{{entropy}}<b>
-        <br/><b>Prediction&nbsp;:&nbsp;{{prediction}}</b><img src="{{ url_for('static', path='./css/money1.jpg') }}" alt="yes"></p>
+<div class="container">
+    <img src="{{ url_for('static', path='./css/money.jpg')}}" alt="yes">
+    <div class="Note-prediction">
+        <h3/><b>Entered Values with prediction:</b> </h3>
+        <p><b>Variance&nbsp;:&nbsp;{{variance}}</b><br/><b>Skewness&nbsp;:&nbsp;{{skewness}}</b>
+            <br/><b>Curtosis&nbsp;:&nbsp;{{curtosis}}</b><br/><b>Entropy&nbsp;:&nbsp;{{entropy}}</b>
+                <br/><b>Prediction&nbsp;:&nbsp;{{prediction}}</b></p>
+    </div>
+</div>
 
 </body>
-
 
 </html>
  
