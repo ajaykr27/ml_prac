@@ -12,8 +12,12 @@
         align-items: center;
         justify-content: center;
         height: 100vh;
-        font-family: cursive;
+        font-family: "Lucida Console", "Courier New", monospace;;
       }
+
+     value{
+        text-align: center;
+     }
 
      input,
         textarea {
@@ -56,9 +60,9 @@
 
 
     <center>
-        <h1 style="color:DarkGreen;"><b>BANK NOTE PREDICTION</b></h1>
+        <h1 style="color:DarkGreen;font-family: cursive;"><b>BANK NOTE PREDICTION</b></h1>
 
-        <h3><b>INPUT YOUR VALUES:</b></h3>
+        <h3 style="font-family: cursive;"><b>INPUT YOUR VALUES:</b></h3>
     </center>
 
     <div class="row">
@@ -66,28 +70,28 @@
         <div class="col-md-6">
             <center>
                 <label for="variance"><b>Variance:</b></label>
-                <input type="number" class="form-control"  name="variance" step="any" value="0.0"  id="variance" />
+                <input type="number" class="form-control"  name="variance" step="any" value="0.0"  id="variance" style="text-align:center"/>
             </center>
         </div>
 
         <div class="col-md-6">
             <center>
                 <label for="skewness"><b>Skewness:</b></label>
-                <input type="number" class="form-control" name="skewness" value="0.0" step="any" id="skewness" />
+                <input type="number" class="form-control" name="skewness" value="0.0" step="any" id="skewness" style="text-align:center"/>
             </center>
         </div>
 
         <div class="col-md-6">
             <center>
                 <label for="curtosis"><b>Curtosis:</b></label>
-                <input type="number" class="form-control" name="curtosis" step="any" value="0.0" id="curtosis" />
+                <input type="number" class="form-control" name="curtosis" step="any" value="0.0" id="curtosis" style="text-align:center"/>
             </center>
         </div>
 
         <div class="col-md-6">
             <center>
                 <label for="entropy"><b>Entropy:</b></label>
-                <input type="number" class="form-control" name="entropy" step="any" value="0.0" id="entropy"/>
+                <input type="number" class="form-control" name="entropy" step="any" value="0.0" id="entropy" style="text-align:center"/>
             </center>
         </div>
         <br/>
