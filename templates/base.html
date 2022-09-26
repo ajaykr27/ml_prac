@@ -14,7 +14,7 @@
   color: black;
 }
 .Note-prediction {
-  position: absolute;
+  position: fixed;
   top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -42,7 +42,7 @@ h3 {
 
 <body>
 <div class="container">
-    <img src="{{url_for('static', path='./css/money2.jpg')}}" alt="yes" style="width:100%;filter: blur(3px);">
+    <img src="{{url_for('static', path='./css/money2.jpg')}}" alt="yes" style="pointer-events: none;width:100%;filter: blur(3px);position: fixed;">
     <div class="Note-prediction">
         <h3/><b>Entered Values with prediction:</b> </h3>
         <p><b>Variance&nbsp;:&nbsp;{{variance}}</b><br/><b>Skewness&nbsp;:&nbsp;{{skewness}}</b>
