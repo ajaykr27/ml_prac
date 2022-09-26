@@ -2,20 +2,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Refresh" content="15; url='/'" />
+    <meta http-equiv="Refresh" content="30; url='/'" />
     <a href="/" style="color:black background-color:powderblue"><b>PREDICT AGAIN</b></a>
     <meta name="viewport" content="width=device-width, initial-scale=1">
  <title>Note Prediction</title>
 <style>
 
 .container {
-  position: absolute;
+  position: relative;
   text-align: center;
   color: black;
 }
 .Note-prediction {
   position: fixed;
-  top: 35%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 30px;
@@ -42,7 +42,7 @@ h3 {
 
 <body>
 <div class="container">
-    <img src="{{url_for('static', path='./css/money2.jpg')}}" alt="yes" style="pointer-events: none;width:100%;filter: blur(3px);position: fixed;">
+    <img src="{{url_for('static', path='./css/money2.jpg')}}" alt="yes" style="width:100%;filter: blur(3px);">
     <div class="Note-prediction">
         <h3/><b>Entered Values with prediction:</b> </h3>
         <p><b>Variance&nbsp;:&nbsp;{{variance}}</b><br/><b>Skewness&nbsp;:&nbsp;{{skewness}}</b>
