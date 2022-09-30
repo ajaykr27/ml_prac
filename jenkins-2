@@ -1,0 +1,16 @@
+pipeline {
+  agent any
+
+    stages {
+
+        stage('Test') {
+            agent {
+                docker { image 'ajay27jsr/money_api' }
+            }
+            steps {
+                sh 'docker build -t ajay27jsr/money_api:latest .'
+            }
+        }
+
+    }
+}
