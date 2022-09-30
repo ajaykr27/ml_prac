@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Note Prediction</title>
+<style>
+
+    body
+    {
+        background-color: powderblue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        font-family: "Lucida Console", "Courier New", monospace;;
+      }
+
+     value{
+        text-align: center;
+     }
+
+     .Note-prediction {
+     position: absolute;
+
+          font-size: 18px;
+    }
+
+     input,
+        textarea {
+        width: 80%;
+        padding: 6px;
+        outline: none;
+      }
+
+
+      img {
+          pointer-events: none;
+          position: absolute;
+          filter: blur(4px);
+          width: 100%;
+          height: 110%;
+          z-index: -1;
+       }
+
+      label {
+        line-height: 1.9rem;
+      }
+
+      input[type="submit"] {
+       transform: translate(2.2%);
+       padding: 3px;
+       margin-top: 0.6rem;
+       font-family: cursive;
+       font-weight: bold;
+      }
+
+     fieldset {
+       padding: 20px 40px;
+     }
+
+</style>
+</head>
+
+<body>
+<img src="{{ url_for('static', path='./css/money3.jpg') }}" alt="" style="width:100;">
+<div class="Note-prediction">
+<form action="/predict/" method="POST" enctype="application/x-www-form-urlencoded">
+
+
+    <center>
+        <h1 style="color:DarkGreen;font-family: cursive;"><b>BANK NOTE PREDICTION</b></h1>
+
+        <h3 style="font-family: cursive;"><b>INPUT YOUR VALUES:</b></h3>
+    </center>
+
+    <div class="row">
+<br/>
+        <div class="col-md-6">
+            <center>
+                <label for="variance"><b>Variance:</b></label><br/>
+                <input type="number" class="form-control"  name="variance" step="any" placeholder="Enter Value"  id="variance" style="text-align:center" required/>
+            </center>
+        </div>
+
+        <div class="col-md-6">
+            <center>
+                <label for="skewness"><b>Skewness:</b></label>
+                <input type="number" class="form-control" name="skewness" placeholder="Enter Value" step="any" id="skewness" style="text-align:center" required/>
+            </center>
+        </div>
+
+        <div class="col-md-6">
+            <center>
+                <label for="curtosis"><b>Curtosis:</b></label>
+                <input type="number" class="form-control" name="curtosis" step="any" placeholder="Enter Value" id="curtosis" style="text-align:center" required/>
+            </center>
+        </div>
+
+        <div class="col-md-6">
+            <center>
+                <label for="entropy"><b>Entropy:</b></label>
+                <input type="number" class="form-control" name="entropy" step="any" placeholder="Enter Value" id="entropy" style="text-align:center;" required/>
+            </center>
+        </div>
+        <br/>
+        <div class="col-md-6">
+            <center>
+            <button type="submit" class="btn btn-info mt-4" id="btn1">Predict</button><br/>
+                </center>
+        </div>
+    </div>
+    </div>
+
+</form>
+
+</body>
+</html>
