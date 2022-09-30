@@ -3,11 +3,14 @@ pipeline {
 		docker { image 'ajay27jsr/money_api' }
 		}
 
-    stages {
-        stage('Test') {
-            steps {
-                sh 'docker run -p 5000:5000 money_api'
+    stage('Build Docker Image') {
+                steps{
+                    sh "docker build -t money_pred:v1"
+                }
             }
-        }
-    }
+            stage('Run Docker Image And Expose API'){
+                steps {
+                sh "docker run -d -p 5000:5000 --name money_pred money_pred:v1"
+                }
+      }
 }
