@@ -3,9 +3,7 @@ pipeline {
 		docker { image 'ajay27jsr/money_api' }
 		
 		}
-		dockerImage.inside("--entrypoint=''") {
-     echo "Tests passed"
-}
+		
 	stages{
     		stage('Build Docker Image') {
                 steps{
