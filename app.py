@@ -41,6 +41,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
 Notes=[]
+print("Hello World")
 
 # 3. Index route, opens automatically on http://127.0.0.1:8000
 
